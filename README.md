@@ -3,6 +3,8 @@
 TCP Initial Sequence Numbers Randomization to prevent TCP ISN based CPU
 Information Leaks.
 
+It randomizes TCP initial sequence numbers for both IPv4 and IPv6 connections.
+
 The Linux kernel has a side-channel information leak bug.
 It is leaked in any outgoing traffic.
 This can allow side-channel attacks because sensitive information about
@@ -38,7 +40,7 @@ Unfortunately, someone probably needs to produce more research papers before
 they will listen."
 
 tirdad is a kernel module to hot-patch the Linux kernel
-to generate random TCP Initial Sequence Numbers for IPv4 TCP connections.
+to generate random TCP Initial Sequence Numbers for both IPv4 and IPv6 TCP connections.
 
 You can refer to this bog post to get familiar with the original issue:
 
