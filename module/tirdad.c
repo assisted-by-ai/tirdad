@@ -119,6 +119,14 @@ int hook_init(void){
 }
 
 void hook_exit(void){
+	int ret;
+
+	ret = klp_disable_patch(&patch);
+	if (ret) {
+		_s_out(1,"Failed to remove hooks: %d", ret);
+		return;
+	}
+
 	_s_out(0,"Removed hooks. Exiting normally.");
 }
 
